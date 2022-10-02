@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/character_0000.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/character_0001.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4, 7 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
@@ -31,6 +37,23 @@ script = ExtResource( 1 )
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2( 0, -12 )
+shape = SubResource( 5 )
+
+[node name="HazardArea" type="Area2D" parent="."]
+position = Vector2( 0, -10 )
+collision_layer = 262144
+collision_mask = 262144
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+position = Vector2( 0, 3 )
+shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
