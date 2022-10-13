@@ -19,7 +19,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
-"base": "EditorVCSInterface",
+"base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
@@ -52,8 +52,8 @@ config/icon="res://icon.png"
 
 window/size/width=320
 window/size/height=180
-window/size/test_width=1280
-window/size/test_height=720
+window/size/test_width=720
+window/size/test_height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -115,9 +115,18 @@ jump={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+dash={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
+2d_physics/layer_1="TERRAIN"
+2d_physics/layer_2="ENEMY"
+2d_physics/layer_17="ENEMY_HAZARD"
+2d_physics/layer_18="ENEMY_GOAL"
 2d_physics/layer_19="HAZARD"
 2d_physics/layer_20="PICKUP"
 
